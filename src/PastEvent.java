@@ -5,62 +5,70 @@ public class PastEvent {
     private String paymentStatus;//Overdue,Paid,Extended
     private boolean requiresExtension;
     private String paymentDetails;
-    //private double pastEventCost;
     private LocalDate evenStartDate;
     private LocalDate eventEndDate;
     private static final double eventCost = 10_000;
-    private static final double pastEventCost = 10_000;
-    private static final double tax = 0.3;
+    private String eventID;
+    private String eventName;
+    private String eventLocation;
+    private String eventPointOfContack;
+    private int totalParticipants;
+    private int totalEventDays;
+    private CalculateEventCost calculateEventCostObject;
 
+    
     public PastEvent(String eventID, String eventName, String eventLocation, String pointOfContact, int totalParticipants, int totalEventDays) {
         
     }
 
-    public String getPaymentStatus() {
-        return paymentStatus;
+    public String getEventID() {
+        return eventID;
     }
 
-    public void setPaymentStatus(String paymentStatus) {
-        this.paymentStatus = paymentStatus;
+    public void setEventID(String eventID) {
+        this.eventID = eventID;
     }
 
-    public boolean isRequiresExtension() {
-        return requiresExtension;
+    public String getEventName() {
+        return eventName;
     }
 
-    public void setRequiresExtension(boolean requiresExtension) {
-        this.requiresExtension = requiresExtension;
-    }
-    
-    public void setPaymentDetails(String paymentDetails) {
-        this.paymentDetails = "The event cost was " + eventCost + "and the payment status is " + paymentStatus + ". The Customer requires extension?: " + requiresExtension + ".";
+    public void setEventName(String eventName) {
+        this.eventName = eventName;
     }
 
-    public String getPaymentDetails() {
-        return paymentDetails;
-    }
-    
-    public void setEventEndDate(LocalDate eventEndDate) {
-        this.eventEndDate = eventEndDate;
-    }
-    
-    public LocalDate getEvenStartDate() {
-        return evenStartDate;
+    public String getEventLocation() {
+        return eventLocation;
     }
 
-    public void setEvenStartDate(LocalDate evenStartDate) {
-        this.evenStartDate = evenStartDate;
+    public void setEventLocation(String eventLocation) {
+        this.eventLocation = eventLocation;
     }
 
-    public LocalDate getEventEndDate() {
-        return eventEndDate;
+    public String getEventPointOfContack() {
+        return eventPointOfContack;
     }
 
-    public void calculateCost(){
-        double cost = 1000 + (1000 * tax);
+    public void setEventPointOfContack(String eventPointOfContack) {
+        this.eventPointOfContack = eventPointOfContack;
     }
 
-    @Override
+    public int getTotalParticipants() {
+        return totalParticipants;
+    }
+
+    public void setTotalParticipants(int totalParticipants) {
+        this.totalParticipants = totalParticipants;
+    }
+
+    public int getTotalEventDays() {
+        return totalEventDays;
+    }
+
+    public void setTotalEventDays(int totalEventDays) {
+        this.totalEventDays = totalEventDays;
+    }
+
     public String toString(){
         return "\n" + "Event ID: " + getEventID() + "\n" +
         "The past event details: " + "\n" +

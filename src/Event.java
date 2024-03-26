@@ -15,11 +15,12 @@ public abstract class Event{
 
     public Event(){}
     
-    public Event(String eventID, String eventName, String eventLocation, String pointOfContact, int totalParticipants, int totalEventDays){
+    public Event(String eventID, String eventName, String eventLocation, String pointOfContact, double eventCost, int totalParticipants, int totalEventDays){
         this.eventID = eventID;
         this.eventName = eventName;
         this.eventLocation = eventLocation;
         this.pointOfContact = pointOfContact;
+        this.eventCost = eventCost;
         this.totalParticipants = totalParticipants;
         this.totalEventDays = totalEventDays;
 
